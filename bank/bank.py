@@ -27,7 +27,7 @@ class Account:
             "narration": "deposit"
         }
         self.deposits.append(deposit_transaction)
-        return f"You have deposited ksh {amount}"
+        return f"You have deposited ksh {amount} and your total amount is {deposit_transaction}"
 
 # Update the withdrawal method to append eachd
 #  withdrawal transaction to the withdrawals list.
@@ -51,7 +51,7 @@ class BankAccount:
                 "narration": "withdrawal"
             }
             self.withdrawals.append(withdrawal_transaction)
-        return f"You have withdrawn {withdrawal_transaction}"
+        return f"You have withdrawn {withdrawal_transaction} and your balance is {amount}"
 
 # Add a repay_loan method with this functionality
 # A customer can repay a loan to reduce the current loan_balance
@@ -73,7 +73,7 @@ class Customer:
             self.loan_balance -= amount
             self.balance += amount
             return "Loan partially repaid"
-print(f"You have paid a loan of {Customer.repay_loan}")
+print(f"You have paid a loan of {Customer.repay_loan} and you have a balance of {BankAccount}")
 
 # Add a transfer method which accepts
 #  two attributes (amount and instance of another account). 
